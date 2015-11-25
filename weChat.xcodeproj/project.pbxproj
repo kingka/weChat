@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F913BF101C059213007AD558 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = F913BF0F1C059213007AD558 /* LoginController.m */; };
+		F913BF141C05A4E8007AD558 /* WCConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = F913BF131C05A4E8007AD558 /* WCConstant.m */; };
 		F92B83F01C030E1700A22278 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F92B83EF1C030E1700A22278 /* main.m */; };
 		F92B83F31C030E1700A22278 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F92B83F21C030E1700A22278 /* AppDelegate.m */; };
-		F92B83F61C030E1700A22278 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F92B83F51C030E1700A22278 /* ViewController.m */; };
 		F92B83F91C030E1700A22278 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F92B83F71C030E1700A22278 /* Main.storyboard */; };
 		F92B83FB1C030E1800A22278 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F92B83FA1C030E1800A22278 /* Assets.xcassets */; };
 		F92B83FE1C030E1800A22278 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F92B83FC1C030E1800A22278 /* LaunchScreen.storyboard */; };
@@ -145,6 +146,12 @@
 		F92B85F01C030F3700A22278 /* libidn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F92B856E1C030F3700A22278 /* libidn.a */; };
 		F92B85F21C030FD400A22278 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F92B85F11C030FD400A22278 /* libresolv.tbd */; };
 		F92B85F41C030FE200A22278 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F92B85F31C030FE200A22278 /* libxml2.tbd */; };
+		F94C86551C058695001BCE5D /* MBProgressHUD+KK.m in Sources */ = {isa = PBXBuildFile; fileRef = F94C86541C058695001BCE5D /* MBProgressHUD+KK.m */; };
+		F94C865B1C0586C1001BCE5D /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = F94C86571C0586C1001BCE5D /* LICENSE */; };
+		F94C865C1C0586C1001BCE5D /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F94C86591C0586C1001BCE5D /* MBProgressHUD.m */; };
+		F94C865D1C0586C1001BCE5D /* README.mdown in Sources */ = {isa = PBXBuildFile; fileRef = F94C865A1C0586C1001BCE5D /* README.mdown */; };
+		F94C86611C058755001BCE5D /* WCAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = F94C86601C058755001BCE5D /* WCAccount.m */; };
+		F94C86661C0588E7001BCE5D /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F94C86651C0588E6001BCE5D /* Login.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -165,12 +172,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F913BF0E1C059213007AD558 /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginController.h; sourceTree = "<group>"; };
+		F913BF0F1C059213007AD558 /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
+		F913BF121C05A4E8007AD558 /* WCConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCConstant.h; sourceTree = "<group>"; };
+		F913BF131C05A4E8007AD558 /* WCConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCConstant.m; sourceTree = "<group>"; };
 		F92B83EB1C030E1700A22278 /* weChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F92B83EF1C030E1700A22278 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F92B83F11C030E1700A22278 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F92B83F21C030E1700A22278 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F92B83F41C030E1700A22278 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F92B83F51C030E1700A22278 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F92B83F81C030E1700A22278 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F92B83FA1C030E1800A22278 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F92B83FD1C030E1800A22278 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -449,6 +458,15 @@
 		F92B85F11C030FD400A22278 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		F92B85F31C030FE200A22278 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		F92B85F51C0310AB00A22278 /* weChat-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "weChat-Prefix.pch"; sourceTree = "<group>"; };
+		F94C86531C058695001BCE5D /* MBProgressHUD+KK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+KK.h"; sourceTree = "<group>"; };
+		F94C86541C058695001BCE5D /* MBProgressHUD+KK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+KK.m"; sourceTree = "<group>"; };
+		F94C86571C0586C1001BCE5D /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		F94C86581C0586C1001BCE5D /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		F94C86591C0586C1001BCE5D /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		F94C865A1C0586C1001BCE5D /* README.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.mdown; sourceTree = "<group>"; };
+		F94C865F1C058755001BCE5D /* WCAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCAccount.h; sourceTree = "<group>"; };
+		F94C86601C058755001BCE5D /* WCAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCAccount.m; sourceTree = "<group>"; };
+		F94C86651C0588E6001BCE5D /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -479,6 +497,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F913BF111C05A4B5007AD558 /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				F913BF121C05A4E8007AD558 /* WCConstant.h */,
+				F913BF131C05A4E8007AD558 /* WCConstant.m */,
+			);
+			path = Macro;
+			sourceTree = "<group>";
+		};
 		F92B83E21C030E1600A22278 = {
 			isa = PBXGroup;
 			children = (
@@ -502,11 +529,11 @@
 		F92B83ED1C030E1700A22278 /* weChat */ = {
 			isa = PBXGroup;
 			children = (
+				F913BF111C05A4B5007AD558 /* Macro */,
+				F94C86621C058796001BCE5D /* Other */,
 				F92B84211C030F3700A22278 /* Classes */,
 				F92B83F11C030E1700A22278 /* AppDelegate.h */,
 				F92B83F21C030E1700A22278 /* AppDelegate.m */,
-				F92B83F41C030E1700A22278 /* ViewController.h */,
-				F92B83F51C030E1700A22278 /* ViewController.m */,
 				F92B83F71C030E1700A22278 /* Main.storyboard */,
 				F92B83FA1C030E1800A22278 /* Assets.xcassets */,
 				F92B83FC1C030E1800A22278 /* LaunchScreen.storyboard */,
@@ -548,6 +575,9 @@
 		F92B84211C030F3700A22278 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F94C86631C05883B001BCE5D /* Login */,
+				F94C865E1C0586E9001BCE5D /* Model */,
+				F94C86521C058695001BCE5D /* Category */,
 				F92B84221C030F3700A22278 /* Lib */,
 			);
 			path = Classes;
@@ -556,6 +586,7 @@
 		F92B84221C030F3700A22278 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				F94C86561C0586C1001BCE5D /* MBProgressHUD */,
 				F92B84231C030F3700A22278 /* XMPP */,
 			);
 			path = Lib;
@@ -1345,6 +1376,60 @@
 			path = libidn;
 			sourceTree = "<group>";
 		};
+		F94C86521C058695001BCE5D /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				F94C86531C058695001BCE5D /* MBProgressHUD+KK.h */,
+				F94C86541C058695001BCE5D /* MBProgressHUD+KK.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		F94C86561C0586C1001BCE5D /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				F94C86571C0586C1001BCE5D /* LICENSE */,
+				F94C86581C0586C1001BCE5D /* MBProgressHUD.h */,
+				F94C86591C0586C1001BCE5D /* MBProgressHUD.m */,
+				F94C865A1C0586C1001BCE5D /* README.mdown */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		F94C865E1C0586E9001BCE5D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F94C865F1C058755001BCE5D /* WCAccount.h */,
+				F94C86601C058755001BCE5D /* WCAccount.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F94C86621C058796001BCE5D /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		F94C86631C05883B001BCE5D /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				F94C86641C058895001BCE5D /* Controller */,
+				F94C86651C0588E6001BCE5D /* Login.storyboard */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		F94C86641C058895001BCE5D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F913BF0E1C059213007AD558 /* LoginController.h */,
+				F913BF0F1C059213007AD558 /* LoginController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1407,6 +1492,7 @@
 		F92B83E31C030E1600A22278 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = WC;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = Imanol;
 				TargetAttributes = {
@@ -1448,7 +1534,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F94C865B1C0586C1001BCE5D /* LICENSE in Resources */,
 				F92B85EF1C030F3700A22278 /* build-libidn.sh in Resources */,
+				F94C86661C0588E7001BCE5D /* Login.storyboard in Resources */,
 				F92B83FE1C030E1800A22278 /* LaunchScreen.storyboard in Resources */,
 				F92B83FB1C030E1800A22278 /* Assets.xcassets in Resources */,
 				F92B85EA1C030F3700A22278 /* README.txt in Resources */,
@@ -1501,14 +1589,15 @@
 				F92B85CA1C030F3700A22278 /* XMPPvCardAvatarModule.m in Sources */,
 				F92B85A81C030F3700A22278 /* XMPPvCardCoreDataStorage.m in Sources */,
 				F92B85A21C030F3700A22278 /* XMPPRoomOccupantMemoryStorageObject.m in Sources */,
-				F92B83F61C030E1700A22278 /* ViewController.m in Sources */,
 				F92B85C11C030F3700A22278 /* XMPPCapabilitiesCoreDataStorage.m in Sources */,
 				F92B85AC1C030F3700A22278 /* XMPPvCardTempAdr.m in Sources */,
 				F92B83F31C030E1700A22278 /* AppDelegate.m in Sources */,
 				F92B85961C030F3700A22278 /* XMPPLastActivity.m in Sources */,
+				F94C865D1C0586C1001BCE5D /* README.mdown in Sources */,
 				F92B85C31C030F3700A22278 /* XMPPCapsResourceCoreDataStorageObject.m in Sources */,
 				F92B858D1C030F3700A22278 /* XMPPResourceMemoryStorageObject.m in Sources */,
 				F92B85DE1C030F3700A22278 /* RFImageToDataTransformer.m in Sources */,
+				F913BF141C05A4E8007AD558 /* WCConstant.m in Sources */,
 				F92B85851C030F3700A22278 /* XMPPGoogleSharedStatus.m in Sources */,
 				F92B859C1C030F3700A22278 /* XMPPRoomHybrid.xcdatamodeld in Sources */,
 				F92B85901C030F3700A22278 /* XMPPRoster.m in Sources */,
@@ -1564,7 +1653,9 @@
 				F92B85991C030F3700A22278 /* XMPPRoomCoreDataStorage.m in Sources */,
 				F92B85BF1C030F3700A22278 /* NSString+XEP_0106.m in Sources */,
 				F92B85A41C030F3700A22278 /* XMPPMUC.m in Sources */,
+				F94C865C1C0586C1001BCE5D /* MBProgressHUD.m in Sources */,
 				F92B85841C030F3700A22278 /* XMPPCoreDataStorage.m in Sources */,
+				F913BF101C059213007AD558 /* LoginController.m in Sources */,
 				F92B85771C030F3700A22278 /* XMPPXOAuth2Google.m in Sources */,
 				F92B857A1C030F3700A22278 /* NSXMLElement+XMPP.m in Sources */,
 				F92B85EC1C030F3700A22278 /* DDXMLDocument.m in Sources */,
@@ -1573,6 +1664,7 @@
 				F92B858B1C030F3700A22278 /* XMPPRosterCoreDataStorage.m in Sources */,
 				F92B85C01C030F3700A22278 /* XMPPCapabilities.xcdatamodel in Sources */,
 				F92B85B41C030F3700A22278 /* XMPPResultSet.m in Sources */,
+				F94C86551C058695001BCE5D /* MBProgressHUD+KK.m in Sources */,
 				F92B85B01C030F3700A22278 /* XMPPvCardTempLabel.m in Sources */,
 				F92B85CC1C030F3700A22278 /* XMPPPresence+XEP_0172.m in Sources */,
 				F92B85941C030F3700A22278 /* XMPPJabberRPCModule.m in Sources */,
@@ -1603,6 +1695,7 @@
 				F92B85D21C030F3700A22278 /* XMPPAutoTime.m in Sources */,
 				F92B85811C030F3700A22278 /* XMPPPresence.m in Sources */,
 				F92B85A01C030F3700A22278 /* XMPPRoomMemoryStorage.m in Sources */,
+				F94C86611C058755001BCE5D /* WCAccount.m in Sources */,
 				F92B85B31C030F3700A22278 /* NSXMLElement+XEP_0059.m in Sources */,
 				F92B85CD1C030F3700A22278 /* XMPPMessage+XEP_0184.m in Sources */,
 			);
@@ -1756,6 +1849,7 @@
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_BUNDLE_IDENTIFIER = KINGKA.weChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1776,6 +1870,7 @@
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_BUNDLE_IDENTIFIER = KINGKA.weChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

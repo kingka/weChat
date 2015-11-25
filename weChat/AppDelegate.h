@@ -8,10 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum{
+    loginSuccess,
+    loginFailure
+} XMPPResultType;
+
+typedef void(^XMPPResultBlock)(XMPPResultType);
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-
+-(void)login:(XMPPResultBlock)block;
 @end
 
