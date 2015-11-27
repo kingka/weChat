@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		F913BF101C059213007AD558 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = F913BF0F1C059213007AD558 /* LoginController.m */; };
 		F913BF141C05A4E8007AD558 /* WCConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = F913BF131C05A4E8007AD558 /* WCConstant.m */; };
+		F913BF181C083EC9007AD558 /* WCRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = F913BF171C083EC9007AD558 /* WCRegisterController.m */; };
+		F913BF1C1C08472A007AD558 /* WCXMPPTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F913BF1B1C08472A007AD558 /* WCXMPPTool.m */; };
 		F92B83F01C030E1700A22278 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F92B83EF1C030E1700A22278 /* main.m */; };
 		F92B83F31C030E1700A22278 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F92B83F21C030E1700A22278 /* AppDelegate.m */; };
 		F92B83F91C030E1700A22278 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F92B83F71C030E1700A22278 /* Main.storyboard */; };
@@ -176,6 +178,11 @@
 		F913BF0F1C059213007AD558 /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
 		F913BF121C05A4E8007AD558 /* WCConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCConstant.h; sourceTree = "<group>"; };
 		F913BF131C05A4E8007AD558 /* WCConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCConstant.m; sourceTree = "<group>"; };
+		F913BF161C083EC9007AD558 /* WCRegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCRegisterController.h; sourceTree = "<group>"; };
+		F913BF171C083EC9007AD558 /* WCRegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCRegisterController.m; sourceTree = "<group>"; };
+		F913BF1A1C08472A007AD558 /* WCXMPPTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCXMPPTool.h; sourceTree = "<group>"; };
+		F913BF1B1C08472A007AD558 /* WCXMPPTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCXMPPTool.m; sourceTree = "<group>"; };
+		F913BF1D1C084A60007AD558 /* WCSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCSingleton.h; sourceTree = "<group>"; };
 		F92B83EB1C030E1700A22278 /* weChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F92B83EF1C030E1700A22278 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F92B83F11C030E1700A22278 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -506,6 +513,24 @@
 			path = Macro;
 			sourceTree = "<group>";
 		};
+		F913BF151C083E81007AD558 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				F913BF161C083EC9007AD558 /* WCRegisterController.h */,
+				F913BF171C083EC9007AD558 /* WCRegisterController.m */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		F913BF191C0846F6007AD558 /* XMPPTool */ = {
+			isa = PBXGroup;
+			children = (
+				F913BF1A1C08472A007AD558 /* WCXMPPTool.h */,
+				F913BF1B1C08472A007AD558 /* WCXMPPTool.m */,
+			);
+			path = XMPPTool;
+			sourceTree = "<group>";
+		};
 		F92B83E21C030E1600A22278 = {
 			isa = PBXGroup;
 			children = (
@@ -575,6 +600,8 @@
 		F92B84211C030F3700A22278 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F913BF191C0846F6007AD558 /* XMPPTool */,
+				F913BF151C083E81007AD558 /* Register */,
 				F94C86631C05883B001BCE5D /* Login */,
 				F94C865E1C0586E9001BCE5D /* Model */,
 				F94C86521C058695001BCE5D /* Category */,
@@ -1408,6 +1435,7 @@
 		F94C86621C058796001BCE5D /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				F913BF1D1C084A60007AD558 /* WCSingleton.h */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -1589,6 +1617,7 @@
 				F92B85CA1C030F3700A22278 /* XMPPvCardAvatarModule.m in Sources */,
 				F92B85A81C030F3700A22278 /* XMPPvCardCoreDataStorage.m in Sources */,
 				F92B85A21C030F3700A22278 /* XMPPRoomOccupantMemoryStorageObject.m in Sources */,
+				F913BF181C083EC9007AD558 /* WCRegisterController.m in Sources */,
 				F92B85C11C030F3700A22278 /* XMPPCapabilitiesCoreDataStorage.m in Sources */,
 				F92B85AC1C030F3700A22278 /* XMPPvCardTempAdr.m in Sources */,
 				F92B83F31C030E1700A22278 /* AppDelegate.m in Sources */,
@@ -1619,6 +1648,7 @@
 				F92B85E31C030F3700A22278 /* DDAbstractDatabaseLogger.m in Sources */,
 				F92B85E61C030F3700A22278 /* DDLog.m in Sources */,
 				F92B85E81C030F3700A22278 /* ContextFilterLogFormatter.m in Sources */,
+				F913BF1C1C08472A007AD558 /* WCXMPPTool.m in Sources */,
 				F92B85E51C030F3700A22278 /* DDFileLogger.m in Sources */,
 				F92B85D91C030F3700A22278 /* XMPPMessage+XEP_0308.m in Sources */,
 				F92B85951C030F3700A22278 /* XMPPIQ+LastActivity.m in Sources */,

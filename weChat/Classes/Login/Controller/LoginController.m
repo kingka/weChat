@@ -7,7 +7,7 @@
 //
 
 #import "LoginController.h"
-#import "AppDelegate.h"
+#import "WCXMPPTool.h"
 
 @interface LoginController ()
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
@@ -37,14 +37,14 @@
         return;
     }
     [MBProgressHUD showMessage:@"Loging....." toView:self.view];
-    AppDelegate *appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+   
     //临时save 到 WCAccount,登陆成功后再Save to sandbox
     WCAccount *account = [WCAccount shareAccount];
     account.name = _nameTextField.text;
     account.pwd = _pwdTextField.text;
     //block 会强引用self
     __weak typeof(self) selfWK = self;
-    [appDelegate login:^(XMPPResultType type) {
+    [[WCXMPPTool sharedXMPPTool] login:^(XMPPResultType type) {
         [selfWK handleXMPPResultType:type];
     }];
 }
