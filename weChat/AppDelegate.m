@@ -22,6 +22,7 @@
     if(account.isLogin){
         id main = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
          self.window.rootViewController = main;
+        [WCXMPPTool sharedXMPPTool].registerOperation = NO;
         [[WCXMPPTool sharedXMPPTool] login:nil];
     }
     return YES;

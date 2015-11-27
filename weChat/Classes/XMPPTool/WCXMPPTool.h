@@ -11,12 +11,16 @@
 
 typedef enum{
     loginSuccess,
-    loginFailure
+    loginFailure,
+    registerSuccess,
+    registerFailure
 } XMPPResultType;
 
 typedef void(^XMPPResultBlock)(XMPPResultType);
 
 @interface WCXMPPTool : NSObject
+@property(assign, nonatomic, getter=isRegisterOperation) BOOL registerOperation;
 -(void)login:(XMPPResultBlock)block;
+-(void)registerToServer:(XMPPResultBlock)block;
 WCSingletonH(XMPPTool);
 @end

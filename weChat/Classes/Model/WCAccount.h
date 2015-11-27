@@ -9,8 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface WCAccount : NSObject
-@property (copy, nonatomic) NSString *name;
-@property (copy, nonatomic) NSString *pwd;
+@property (copy, nonatomic) NSString *lName;
+@property (copy, nonatomic) NSString *lpwd;
+@property (copy, nonatomic) NSString *rName;
+@property (copy, nonatomic) NSString *rpwd;
 @property (assign, nonatomic, getter=isLogin) BOOL login;
 
 //singleton

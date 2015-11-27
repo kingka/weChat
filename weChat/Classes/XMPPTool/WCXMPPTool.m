@@ -24,6 +24,7 @@
 -(void)setupXmppStream;
 -(void)connectToHost;
 -(void)sendPwdToHost;
+-(void)sendPwdToHostFromRegister;
 -(void)sendOnlineMsg;
 @end
 
@@ -38,6 +39,15 @@ WCSingletonM(XMPPTool);
     
     [self connectToHost];
 }
+
+-(void)registerToServer:(XMPPResultBlock)block{
+    //先断开之前发送的连接
+    [_xmppStream disconnect];
+    //保存block, 因为不是在本方法回掉block
+    _resultBlock = block;
+    
+    [self connectToHost];
+}
 #pragma mark - private Methods
 #pragma mark 初始化XMPPStream
 -(void)setupXmppStream{
@@ -45,7 +55,13 @@ WCSingletonM(XMPPTool);
     
     _xmppStream = [[XMPPStream alloc]init];
     //1 设置jid resource 用户登录客户端设备登录的类型
-    XMPPJID *jid = [XMPPJID jidWithUser:account.name domain:@"imanol.local" resource:@"iPhone"];
+    XMPPJID *jid = nil;
+    //判断登陆or 注册
+    if(self.registerOperation){
+        jid = [XMPPJID jidWithUser:account.rName domain:@"imanol.local" resource:nil];
+    }else{
+        jid = [XMPPJID jidWithUser:account.lName domain:@"imanol.local" resource:nil];
+    }
     _xmppStream.myJID = jid;
     //2 设置host
     _xmppStream.hostName = @"127.0.0.1";
@@ -70,9 +86,17 @@ WCSingletonM(XMPPTool);
 
 -(void)sendPwdToHost{
     WCAccount *account = [WCAccount shareAccount];
-    
     NSError *error = nil;
-    [_xmppStream authenticateWithPassword:account.pwd error:&error];
+    [_xmppStream authenticateWithPassword:account.lpwd error:&error];
+    if(error){
+        NSLog(@"%@",error);
+    }
+}
+
+-(void)sendPwdToHostFromRegister{
+    WCAccount *account = [WCAccount shareAccount];
+    NSError *error = nil;
+    [_xmppStream registerWithPassword:account.rpwd error:&error];
     if(error){
         NSLog(@"%@",error);
     }
@@ -87,7 +111,12 @@ WCSingletonM(XMPPTool);
 #pragma mark - xmppstream delegate
 -(void)xmppStreamDidConnect:(XMPPStream *)sender{
     NSLog(@"%s",__func__);
-    [self sendPwdToHost];
+    if(self.isRegisterOperation){
+        [self sendPwdToHostFromRegister];
+    }else{
+        [self sendPwdToHost];
+    }
+    
 }
 
 -(void)xmppStreamDidAuthenticate:(XMPPStream *)sender{
@@ -108,4 +137,23 @@ WCSingletonM(XMPPTool);
 
 }
 
+#pragma mark - 注册成功
+-(void)xmppStreamDidRegister:(XMPPStream *)sender{
+    NSLog(@"%s",__func__);
+    //回掉resultBlock
+    if(_resultBlock){
+        _resultBlock(registerSuccess);
+    }
+
+}
+
+#pragma mark - 注册失败
+-(void)xmppStream:(XMPPStream *)sender didNotRegister:(DDXMLElement *)error{
+    NSLog(@"%s",__func__);
+    //回掉resultBlock
+    if(_resultBlock){
+        _resultBlock(registerFailure);
+    }
+
+}
 @end

@@ -40,10 +40,11 @@
    
     //临时save 到 WCAccount,登陆成功后再Save to sandbox
     WCAccount *account = [WCAccount shareAccount];
-    account.name = _nameTextField.text;
-    account.pwd = _pwdTextField.text;
+    account.lName = _nameTextField.text;
+    account.lpwd = _pwdTextField.text;
     //block 会强引用self
     __weak typeof(self) selfWK = self;
+    [WCXMPPTool sharedXMPPTool].registerOperation = NO;
     [[WCXMPPTool sharedXMPPTool] login:^(XMPPResultType type) {
         [selfWK handleXMPPResultType:type];
     }];

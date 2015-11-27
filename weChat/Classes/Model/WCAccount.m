@@ -23,8 +23,8 @@
             account = [super allocWithZone:zone];
             //从沙盒获取上次的用户登录信息
             NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-            account.name = [defaults objectForKey:WCName];
-            account.pwd = [defaults objectForKey:WCPWD];
+            account.lName = [defaults objectForKey:WCName];
+            account.lpwd = [defaults objectForKey:WCPWD];
             account.login = [defaults boolForKey:WCLoginStatus];
         }
     });
@@ -33,8 +33,8 @@
 
 -(void)saveToSandBox{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:self.name forKey:WCName];
-    [defaults setObject:self.pwd forKey:WCPWD];
+    [defaults setObject:self.lName forKey:WCName];
+    [defaults setObject:self.lpwd forKey:WCPWD];
     [defaults setBool:self.login forKey:WCLoginStatus];
     [defaults synchronize];
 }
