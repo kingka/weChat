@@ -22,5 +22,6 @@ typedef void(^XMPPResultBlock)(XMPPResultType);
 @property(assign, nonatomic, getter=isRegisterOperation) BOOL registerOperation;
 -(void)login:(XMPPResultBlock)block;
 -(void)registerToServer:(XMPPResultBlock)block;
+-(void)logout;
 WCSingletonH(XMPPTool);
 @end

@@ -29,8 +29,15 @@
 @end
 
 @implementation WCXMPPTool
+
 WCSingletonM(XMPPTool);
+
 #pragma mark - public methods
+-(void)logout{
+    [self sendOffLineMsg];
+    [_xmppStream disconnect];
+}
+
 -(void)login:(XMPPResultBlock)block{
     //先断开之前发送的连接
     [_xmppStream disconnect];
@@ -49,6 +56,10 @@ WCSingletonM(XMPPTool);
     [self connectToHost];
 }
 #pragma mark - private Methods
+-(void)sendOffLineMsg{
+    XMPPPresence *offline = [XMPPPresence presenceWithType:@"unavailable"];
+    [_xmppStream sendElement:offline];
+}
 #pragma mark 初始化XMPPStream
 -(void)setupXmppStream{
     WCAccount *account = [WCAccount shareAccount];
@@ -87,6 +98,7 @@ WCSingletonM(XMPPTool);
 -(void)sendPwdToHost{
     WCAccount *account = [WCAccount shareAccount];
     NSError *error = nil;
+    NSLog(@"登陆： %@",account.lName);
     [_xmppStream authenticateWithPassword:account.lpwd error:&error];
     if(error){
         NSLog(@"%@",error);
@@ -96,6 +108,7 @@ WCSingletonM(XMPPTool);
 -(void)sendPwdToHostFromRegister{
     WCAccount *account = [WCAccount shareAccount];
     NSError *error = nil;
+    NSLog(@"注册： %@",account.rName);
     [_xmppStream registerWithPassword:account.rpwd error:&error];
     if(error){
         NSLog(@"%@",error);

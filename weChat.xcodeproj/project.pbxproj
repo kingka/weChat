@@ -11,6 +11,13 @@
 		F913BF141C05A4E8007AD558 /* WCConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = F913BF131C05A4E8007AD558 /* WCConstant.m */; };
 		F913BF181C083EC9007AD558 /* WCRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = F913BF171C083EC9007AD558 /* WCRegisterController.m */; };
 		F913BF1C1C08472A007AD558 /* WCXMPPTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F913BF1B1C08472A007AD558 /* WCXMPPTool.m */; };
+		F913BF221C0BE7E3007AD558 /* WCMeController.m in Sources */ = {isa = PBXBuildFile; fileRef = F913BF211C0BE7E3007AD558 /* WCMeController.m */; };
+		F913BF301C0BE99A007AD558 /* UIButton+WF.m in Sources */ = {isa = PBXBuildFile; fileRef = F913BF251C0BE99A007AD558 /* UIButton+WF.m */; };
+		F913BF311C0BE99A007AD558 /* UIImage+WF.m in Sources */ = {isa = PBXBuildFile; fileRef = F913BF271C0BE99A007AD558 /* UIImage+WF.m */; };
+		F913BF321C0BE99A007AD558 /* UIScreen+WF.m in Sources */ = {isa = PBXBuildFile; fileRef = F913BF291C0BE99A007AD558 /* UIScreen+WF.m */; };
+		F913BF331C0BE99A007AD558 /* UIStoryboard+WF.m in Sources */ = {isa = PBXBuildFile; fileRef = F913BF2B1C0BE99A007AD558 /* UIStoryboard+WF.m */; };
+		F913BF341C0BE99A007AD558 /* UITextField+WF.m in Sources */ = {isa = PBXBuildFile; fileRef = F913BF2D1C0BE99A007AD558 /* UITextField+WF.m */; };
+		F913BF351C0BE99A007AD558 /* UIView+WF.m in Sources */ = {isa = PBXBuildFile; fileRef = F913BF2F1C0BE99A007AD558 /* UIView+WF.m */; };
 		F92B83F01C030E1700A22278 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F92B83EF1C030E1700A22278 /* main.m */; };
 		F92B83F31C030E1700A22278 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F92B83F21C030E1700A22278 /* AppDelegate.m */; };
 		F92B83F91C030E1700A22278 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F92B83F71C030E1700A22278 /* Main.storyboard */; };
@@ -183,6 +190,21 @@
 		F913BF1A1C08472A007AD558 /* WCXMPPTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCXMPPTool.h; sourceTree = "<group>"; };
 		F913BF1B1C08472A007AD558 /* WCXMPPTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCXMPPTool.m; sourceTree = "<group>"; };
 		F913BF1D1C084A60007AD558 /* WCSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCSingleton.h; sourceTree = "<group>"; };
+		F913BF201C0BE7E3007AD558 /* WCMeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCMeController.h; sourceTree = "<group>"; };
+		F913BF211C0BE7E3007AD558 /* WCMeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCMeController.m; sourceTree = "<group>"; };
+		F913BF231C0BE99A007AD558 /* CategoryWF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryWF.h; sourceTree = "<group>"; };
+		F913BF241C0BE99A007AD558 /* UIButton+WF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+WF.h"; sourceTree = "<group>"; };
+		F913BF251C0BE99A007AD558 /* UIButton+WF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+WF.m"; sourceTree = "<group>"; };
+		F913BF261C0BE99A007AD558 /* UIImage+WF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WF.h"; sourceTree = "<group>"; };
+		F913BF271C0BE99A007AD558 /* UIImage+WF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WF.m"; sourceTree = "<group>"; };
+		F913BF281C0BE99A007AD558 /* UIScreen+WF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+WF.h"; sourceTree = "<group>"; };
+		F913BF291C0BE99A007AD558 /* UIScreen+WF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+WF.m"; sourceTree = "<group>"; };
+		F913BF2A1C0BE99A007AD558 /* UIStoryboard+WF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIStoryboard+WF.h"; sourceTree = "<group>"; };
+		F913BF2B1C0BE99A007AD558 /* UIStoryboard+WF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIStoryboard+WF.m"; sourceTree = "<group>"; };
+		F913BF2C1C0BE99A007AD558 /* UITextField+WF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+WF.h"; sourceTree = "<group>"; };
+		F913BF2D1C0BE99A007AD558 /* UITextField+WF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+WF.m"; sourceTree = "<group>"; };
+		F913BF2E1C0BE99A007AD558 /* UIView+WF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WF.h"; sourceTree = "<group>"; };
+		F913BF2F1C0BE99A007AD558 /* UIView+WF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WF.m"; sourceTree = "<group>"; };
 		F92B83EB1C030E1700A22278 /* weChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F92B83EF1C030E1700A22278 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F92B83F11C030E1700A22278 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -531,6 +553,23 @@
 			path = XMPPTool;
 			sourceTree = "<group>";
 		};
+		F913BF1E1C0BE788007AD558 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				F913BF1F1C0BE7A8007AD558 /* Profile */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		F913BF1F1C0BE7A8007AD558 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				F913BF201C0BE7E3007AD558 /* WCMeController.h */,
+				F913BF211C0BE7E3007AD558 /* WCMeController.m */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		F92B83E21C030E1600A22278 = {
 			isa = PBXGroup;
 			children = (
@@ -600,6 +639,7 @@
 		F92B84211C030F3700A22278 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F913BF1E1C0BE788007AD558 /* Main */,
 				F913BF191C0846F6007AD558 /* XMPPTool */,
 				F913BF151C083E81007AD558 /* Register */,
 				F94C86631C05883B001BCE5D /* Login */,
@@ -1406,6 +1446,19 @@
 		F94C86521C058695001BCE5D /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				F913BF231C0BE99A007AD558 /* CategoryWF.h */,
+				F913BF241C0BE99A007AD558 /* UIButton+WF.h */,
+				F913BF251C0BE99A007AD558 /* UIButton+WF.m */,
+				F913BF261C0BE99A007AD558 /* UIImage+WF.h */,
+				F913BF271C0BE99A007AD558 /* UIImage+WF.m */,
+				F913BF281C0BE99A007AD558 /* UIScreen+WF.h */,
+				F913BF291C0BE99A007AD558 /* UIScreen+WF.m */,
+				F913BF2A1C0BE99A007AD558 /* UIStoryboard+WF.h */,
+				F913BF2B1C0BE99A007AD558 /* UIStoryboard+WF.m */,
+				F913BF2C1C0BE99A007AD558 /* UITextField+WF.h */,
+				F913BF2D1C0BE99A007AD558 /* UITextField+WF.m */,
+				F913BF2E1C0BE99A007AD558 /* UIView+WF.h */,
+				F913BF2F1C0BE99A007AD558 /* UIView+WF.m */,
 				F94C86531C058695001BCE5D /* MBProgressHUD+KK.h */,
 				F94C86541C058695001BCE5D /* MBProgressHUD+KK.m */,
 			);
@@ -1600,6 +1653,7 @@
 				F92B85BE1C030F3700A22278 /* XMPPTransports.m in Sources */,
 				F92B857D1C030F3700A22278 /* XMPPJID.m in Sources */,
 				F92B85791C030F3700A22278 /* NSNumber+XMPP.m in Sources */,
+				F913BF331C0BE99A007AD558 /* UIStoryboard+WF.m in Sources */,
 				F92B85D01C030F3700A22278 /* XMPPAutoPing.m in Sources */,
 				F92B85C41C030F3700A22278 /* XMPPCapabilities.m in Sources */,
 				F92B85831C030F3700A22278 /* XMPPBandwidthMonitor.m in Sources */,
@@ -1608,6 +1662,7 @@
 				F92B85781C030F3700A22278 /* NSData+XMPP.m in Sources */,
 				F92B85881C030F3700A22278 /* XMPPGroupCoreDataStorageObject.m in Sources */,
 				F92B85C81C030F3700A22278 /* XMPPMessageArchivingCoreDataStorage.m in Sources */,
+				F913BF341C0BE99A007AD558 /* UITextField+WF.m in Sources */,
 				F92B859F1C030F3700A22278 /* XMPPRoomOccupantHybridMemoryStorageObject.m in Sources */,
 				F92B85B61C030F3700A22278 /* XMPPPubSub.m in Sources */,
 				F92B85C91C030F3700A22278 /* XMPPMessageArchiving.m in Sources */,
@@ -1623,6 +1678,7 @@
 				F92B83F31C030E1700A22278 /* AppDelegate.m in Sources */,
 				F92B85961C030F3700A22278 /* XMPPLastActivity.m in Sources */,
 				F94C865D1C0586C1001BCE5D /* README.mdown in Sources */,
+				F913BF301C0BE99A007AD558 /* UIButton+WF.m in Sources */,
 				F92B85C31C030F3700A22278 /* XMPPCapsResourceCoreDataStorageObject.m in Sources */,
 				F92B858D1C030F3700A22278 /* XMPPResourceMemoryStorageObject.m in Sources */,
 				F92B85DE1C030F3700A22278 /* RFImageToDataTransformer.m in Sources */,
@@ -1670,6 +1726,7 @@
 				F92B85D11C030F3700A22278 /* XMPPPing.m in Sources */,
 				F92B85D31C030F3700A22278 /* XMPPTime.m in Sources */,
 				F92B85971C030F3700A22278 /* XMPPPrivacy.m in Sources */,
+				F913BF311C0BE99A007AD558 /* UIImage+WF.m in Sources */,
 				F92B85C51C030F3700A22278 /* XMPPMessageArchiving.xcdatamodeld in Sources */,
 				F92B85A71C030F3700A22278 /* XMPPvCardAvatarCoreDataStorageObject.m in Sources */,
 				F92B85981C030F3700A22278 /* XMPPRoom.xcdatamodeld in Sources */,
@@ -1713,9 +1770,11 @@
 				F92B858C1C030F3700A22278 /* XMPPUserCoreDataStorageObject.m in Sources */,
 				F92B859D1C030F3700A22278 /* XMPPRoomHybridStorage.m in Sources */,
 				F92B859A1C030F3700A22278 /* XMPPRoomMessageCoreDataStorageObject.m in Sources */,
+				F913BF321C0BE99A007AD558 /* UIScreen+WF.m in Sources */,
 				F92B85BC1C030F3700A22278 /* XMPPMessage+XEP_0085.m in Sources */,
 				F92B85E21C030F3700A22278 /* GCDAsyncSocket.m in Sources */,
 				F92B85A91C030F3700A22278 /* XMPPvCardCoreDataStorageObject.m in Sources */,
+				F913BF221C0BE7E3007AD558 /* WCMeController.m in Sources */,
 				F92B85EB1C030F3700A22278 /* NSString+DDXML.m in Sources */,
 				F92B85E11C030F3700A22278 /* XMPPStringPrep.m in Sources */,
 				F92B83F01C030E1700A22278 /* main.m in Sources */,
@@ -1726,6 +1785,7 @@
 				F92B85811C030F3700A22278 /* XMPPPresence.m in Sources */,
 				F92B85A01C030F3700A22278 /* XMPPRoomMemoryStorage.m in Sources */,
 				F94C86611C058755001BCE5D /* WCAccount.m in Sources */,
+				F913BF351C0BE99A007AD558 /* UIView+WF.m in Sources */,
 				F92B85B31C030F3700A22278 /* NSXMLElement+XEP_0059.m in Sources */,
 				F92B85CD1C030F3700A22278 /* XMPPMessage+XEP_0184.m in Sources */,
 			);
