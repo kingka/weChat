@@ -15,4 +15,12 @@
 #import "WCAccount.h"
 #import "MBProgressHUD+KK.h"
 #import "WCConstant.h"
+
+    //自定义log
+    #ifdef DEBUG
+    //#define WCLog(...) NSLog(__VA_ARGS__)
+    #define WCLog(...) NSLog(@"%s\n %@ \n\n", __func__, [NSString stringWithFormat:__VA_ARGS__])
+    #else
+    #endif
+
 #endif /* weChat_Prefix_pch */

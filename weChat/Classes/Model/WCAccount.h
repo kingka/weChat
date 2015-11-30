@@ -15,8 +15,12 @@
 @property (copy, nonatomic) NSString *rpwd;
 @property (assign, nonatomic, getter=isLogin) BOOL login;
 
+@property (strong, nonatomic, readonly) NSString *host;
+@property (strong, nonatomic, readonly) NSString *domain;
+@property (assign, nonatomic, readonly) int port;
 //singleton
 + (instancetype)shareAccount;
 //save
 - (void)saveToSandBox;
+
 @end

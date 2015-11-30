@@ -8,6 +8,10 @@
 
 #import "WCAccount.h"
 
+static NSString *domain = @"imanol.local";
+static NSString *host = @"127.0.0.1";
+static int port = 5222;
+
 @implementation WCAccount
 
 +(instancetype)shareAccount{
@@ -37,5 +41,17 @@
     [defaults setObject:self.lpwd forKey:WCPWD];
     [defaults setBool:self.login forKey:WCLoginStatus];
     [defaults synchronize];
+}
+
+-(NSString *)domain{
+    return domain;
+}
+
+-(NSString *)host{
+    return host;
+}
+
+-(int)port{
+    return port;
 }
 @end

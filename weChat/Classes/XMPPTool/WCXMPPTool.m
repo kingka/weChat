@@ -69,15 +69,15 @@ WCSingletonM(XMPPTool);
     XMPPJID *jid = nil;
     //判断登陆or 注册
     if(self.registerOperation){
-        jid = [XMPPJID jidWithUser:account.rName domain:@"imanol.local" resource:nil];
+        jid = [XMPPJID jidWithUser:account.rName domain:account.domain resource:nil];
     }else{
-        jid = [XMPPJID jidWithUser:account.lName domain:@"imanol.local" resource:nil];
+        jid = [XMPPJID jidWithUser:account.lName domain:account.domain resource:nil];
     }
     _xmppStream.myJID = jid;
     //2 设置host
-    _xmppStream.hostName = @"127.0.0.1";
+    _xmppStream.hostName = account.host;
     //3 设置端口 The default port is 5222.
-    _xmppStream.hostPort = 5222;
+    _xmppStream.hostPort = account.port;
     //4 设置代理
     [_xmppStream addDelegate:self delegateQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)];
 }
@@ -89,29 +89,29 @@ WCSingletonM(XMPPTool);
     NSError *error = nil;
     [_xmppStream connectWithTimeout:XMPPStreamTimeoutNone error:&error];
     if(error){
-        NSLog(@"%@",error);
+        WCLog(@"%@",error);
     }else{
-        NSLog(@"发送jid 成功");
+        WCLog(@"发送jid 成功");
     }
 }
 
 -(void)sendPwdToHost{
     WCAccount *account = [WCAccount shareAccount];
     NSError *error = nil;
-    NSLog(@"登陆： %@",account.lName);
+    WCLog(@"登陆： %@",account.lName);
     [_xmppStream authenticateWithPassword:account.lpwd error:&error];
     if(error){
-        NSLog(@"%@",error);
+        WCLog(@"%@",error);
     }
 }
 
 -(void)sendPwdToHostFromRegister{
     WCAccount *account = [WCAccount shareAccount];
     NSError *error = nil;
-    NSLog(@"注册： %@",account.rName);
+    WCLog(@"注册： %@",account.rName);
     [_xmppStream registerWithPassword:account.rpwd error:&error];
     if(error){
-        NSLog(@"%@",error);
+        WCLog(@"%@",error);
     }
 }
 
@@ -123,7 +123,7 @@ WCSingletonM(XMPPTool);
 
 #pragma mark - xmppstream delegate
 -(void)xmppStreamDidConnect:(XMPPStream *)sender{
-    NSLog(@"%s",__func__);
+    WCLog(@"连接成功");
     if(self.isRegisterOperation){
         [self sendPwdToHostFromRegister];
     }else{
@@ -133,7 +133,7 @@ WCSingletonM(XMPPTool);
 }
 
 -(void)xmppStreamDidAuthenticate:(XMPPStream *)sender{
-    NSLog(@"%s",__func__);
+    WCLog(@"授权成功");
     //回掉resultBlock
     if(_resultBlock){
         _resultBlock(loginSuccess);
@@ -142,7 +142,7 @@ WCSingletonM(XMPPTool);
 }
 
 -(void)xmppStream:(XMPPStream *)sender didNotAuthenticate:(DDXMLElement *)error{
-    NSLog(@"%s",__func__);
+    WCLog(@"授权失败");
     //回掉resultBlock
     if(_resultBlock){
         _resultBlock(loginFailure);
@@ -152,7 +152,7 @@ WCSingletonM(XMPPTool);
 
 #pragma mark - 注册成功
 -(void)xmppStreamDidRegister:(XMPPStream *)sender{
-    NSLog(@"%s",__func__);
+    WCLog(@"注册成功");
     //回掉resultBlock
     if(_resultBlock){
         _resultBlock(registerSuccess);
@@ -162,7 +162,7 @@ WCSingletonM(XMPPTool);
 
 #pragma mark - 注册失败
 -(void)xmppStream:(XMPPStream *)sender didNotRegister:(DDXMLElement *)error{
-    NSLog(@"%s",__func__);
+    WCLog(@"注册失败");
     //回掉resultBlock
     if(_resultBlock){
         _resultBlock(registerFailure);
