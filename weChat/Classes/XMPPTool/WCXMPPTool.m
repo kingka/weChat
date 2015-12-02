@@ -7,7 +7,7 @@
 //
 
 #import "WCXMPPTool.h"
-#import "XMPP.h"
+
 /*
  1 用户登录流程
  1.初始化XMPPStream
@@ -19,6 +19,7 @@
 @interface WCXMPPTool ()<XMPPStreamDelegate>{
     
     XMPPStream *_xmppStream;
+    XMPPvCardAvatarModule *_avatar;//电子名片的头像模块
     XMPPResultBlock _resultBlock;
 }
 -(void)setupXmppStream;
@@ -65,6 +66,15 @@ WCSingletonM(XMPPTool);
     WCAccount *account = [WCAccount shareAccount];
     
     _xmppStream = [[XMPPStream alloc]init];
+    
+    //*添加xmpp 其他模块
+    _vCardStorage = [XMPPvCardCoreDataStorage sharedInstance];
+    _vCard = [[XMPPvCardTempModule alloc]initWithvCardStorage:_vCardStorage];
+    _avatar = [[XMPPvCardAvatarModule alloc]initWithvCardTempModule:_vCard];
+    //*激活
+    [_vCard activate:_xmppStream];
+    [_avatar activate:_xmppStream];
+    
     //1 设置jid resource 用户登录客户端设备登录的类型
     XMPPJID *jid = nil;
     //判断登陆or 注册
