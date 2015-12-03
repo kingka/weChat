@@ -20,7 +20,12 @@
 
 @implementation WCMeController
 - (IBAction)logout:(id)sender {
+    //zhuxiao
     [[WCXMPPTool sharedXMPPTool] logout];
+    // 注销的时候，把沙盒的登录状态设置为NO
+    [WCAccount shareAccount].login = NO;
+    [[WCAccount shareAccount] saveToSandBox];
+    //回登录的控制器
     [UIStoryboard showInitialVCWithName:@"Login"];
 }
 

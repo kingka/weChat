@@ -63,10 +63,7 @@ WCSingletonM(XMPPTool);
 }
 #pragma mark 初始化XMPPStream
 -(void)setupXmppStream{
-    WCAccount *account = [WCAccount shareAccount];
-    
     _xmppStream = [[XMPPStream alloc]init];
-    
     //*添加xmpp 其他模块
     _vCardStorage = [XMPPvCardCoreDataStorage sharedInstance];
     _vCard = [[XMPPvCardTempModule alloc]initWithvCardStorage:_vCardStorage];
@@ -74,7 +71,16 @@ WCSingletonM(XMPPTool);
     //*激活
     [_vCard activate:_xmppStream];
     [_avatar activate:_xmppStream];
+    // 设置代理
+    [_xmppStream addDelegate:self delegateQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)];
+}
+
+-(void)connectToHost{
+    if(_xmppStream == nil){
+        [self setupXmppStream];
+    }
     
+     WCAccount *account = [WCAccount shareAccount];
     //1 设置jid resource 用户登录客户端设备登录的类型
     XMPPJID *jid = nil;
     //判断登陆or 注册
@@ -88,14 +94,7 @@ WCSingletonM(XMPPTool);
     _xmppStream.hostName = account.host;
     //3 设置端口 The default port is 5222.
     _xmppStream.hostPort = account.port;
-    //4 设置代理
-    [_xmppStream addDelegate:self delegateQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)];
-}
-
--(void)connectToHost{
-    if(_xmppStream == nil){
-        [self setupXmppStream];
-    }
+    
     NSError *error = nil;
     [_xmppStream connectWithTimeout:XMPPStreamTimeoutNone error:&error];
     if(error){

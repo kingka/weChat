@@ -15,6 +15,7 @@
 #import "WCAccount.h"
 #import "MBProgressHUD+KK.h"
 #import "WCConstant.h"
+#import "WCXMPPTool.h"
 
     //自定义log
     #ifdef DEBUG
