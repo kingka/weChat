@@ -23,6 +23,8 @@ typedef void(^XMPPResultBlock)(XMPPResultType);
 @property(assign, nonatomic, getter=isRegisterOperation) BOOL registerOperation;
 @property (strong, nonatomic)  XMPPvCardTempModule *vCard;//电子名片
 @property (strong, nonatomic)  XMPPvCardCoreDataStorage *vCardStorage;//电子名片数据存储
+@property(strong,nonatomic,readonly)XMPPRoster *roster;//花名册
+@property(strong,nonatomic,readonly)XMPPRosterCoreDataStorage *rosterStorage;//花名册数据存储
 -(void)login:(XMPPResultBlock)block;
 -(void)registerToServer:(XMPPResultBlock)block;
 -(void)logout;

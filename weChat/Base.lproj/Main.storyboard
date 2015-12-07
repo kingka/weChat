@@ -536,22 +536,40 @@
             </objects>
             <point key="canvasLocation" x="1054" y="1641"/>
         </scene>
-        <!--Root View Controller-->
+        <!--好友-->
         <scene sceneID="QfT-RU-pbh">
             <objects>
-                <tableViewController id="ClU-hf-Sgr" sceneMemberID="viewController">
+                <tableViewController id="ClU-hf-Sgr" customClass="WCContractsController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Irp-Sd-lKz">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Y1Y-fR-MFb">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="ZFZ-wS-FQJ" detailTextLabel="zx9-zz-6Wh" style="IBUITableViewCellStyleValue1" id="Y1Y-fR-MFb">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Y1Y-fR-MFb" id="C7I-fO-vaS">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZFZ-wS-FQJ">
+                                            <rect key="frame" x="15" y="12" width="32" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zx9-zz-6Wh">
+                                            <rect key="frame" x="543" y="12" width="42" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <animations/>
                                 </tableViewCellContentView>
                                 <animations/>
@@ -562,17 +580,17 @@
                             <outlet property="delegate" destination="ClU-hf-Sgr" id="WHy-47-aM6"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="TNP-nR-0b8"/>
+                    <navigationItem key="navigationItem" title="好友" id="TNP-nR-0b8"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s6y-la-InK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1880" y="965"/>
         </scene>
-        <!--Item-->
+        <!--好友-->
         <scene sceneID="HOq-Tc-ygI">
             <objects>
                 <navigationController id="vDO-MD-Gs5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="vrJ-ZN-g4h"/>
+                    <tabBarItem key="tabBarItem" title="好友" id="vrJ-ZN-g4h"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hDq-qy-GaI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

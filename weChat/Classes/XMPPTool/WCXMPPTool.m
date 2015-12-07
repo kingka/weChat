@@ -33,6 +33,12 @@
 
 WCSingletonM(XMPPTool);
 
+-(void)dealloc{
+    
+    [self teardownStream];
+    
+}
+
 #pragma mark - public methods
 -(void)logout{
     [self sendOffLineMsg];
@@ -61,6 +67,29 @@ WCSingletonM(XMPPTool);
     XMPPPresence *offline = [XMPPPresence presenceWithType:@"unavailable"];
     [_xmppStream sendElement:offline];
 }
+
+-(void)teardownStream{
+    //移除代理
+    [_xmppStream removeDelegate:self];
+    
+    //取消模块
+    [_avatar deactivate];
+    [_vCard deactivate];
+    [_roster deactivate];
+    
+    //断开连接
+    [_xmppStream disconnect];
+    
+    //清空资源
+    _roster = nil;
+    _rosterStorage = nil;
+    _vCardStorage = nil;
+    _vCard = nil;
+    _avatar = nil;
+    _xmppStream = nil;
+    
+}
+
 #pragma mark 初始化XMPPStream
 -(void)setupXmppStream{
     _xmppStream = [[XMPPStream alloc]init];
@@ -68,9 +97,12 @@ WCSingletonM(XMPPTool);
     _vCardStorage = [XMPPvCardCoreDataStorage sharedInstance];
     _vCard = [[XMPPvCardTempModule alloc]initWithvCardStorage:_vCardStorage];
     _avatar = [[XMPPvCardAvatarModule alloc]initWithvCardTempModule:_vCard];
+    _rosterStorage = [XMPPRosterCoreDataStorage sharedInstance];
+    _roster = [[XMPPRoster alloc]initWithRosterStorage:_rosterStorage];
     //*激活
     [_vCard activate:_xmppStream];
     [_avatar activate:_xmppStream];
+    [_roster activate:_xmppStream];
     // 设置代理
     [_xmppStream addDelegate:self delegateQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)];
 }

@@ -10,7 +10,7 @@
 #import "XMPPvCardTemp.h"
 #import "WCEditvCardController.h"
 
-@interface WCProfileController ()<editvCardControllerDelegate>
+@interface WCProfileController ()<editvCardControllerDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImgView;//头像
 @property (weak, nonatomic) IBOutlet UILabel *nicknameLabel;//昵称
 @property (weak, nonatomic) IBOutlet UILabel *wechatNumLabel;//微信号
@@ -64,6 +64,7 @@
     switch (selectedCell.tag) {
         case 0:
             WCLog(@"换头像");
+            [self chooseIMG];
             break;
         case 1:
             WCLog(@"进入下一个控制器");
@@ -77,6 +78,10 @@
     }
 }
 
+-(void)chooseIMG{
+    UIActionSheet *sheet = [[UIActionSheet alloc]initWithTitle:@"请选择" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"相机" otherButtonTitles:@"图片库", nil];
+    [sheet showInView:self.view];
+}
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     id destination = segue.destinationViewController;
     WCEditvCardController *controller = destination;
@@ -99,8 +104,9 @@
     if (self.departmentLabel.text != nil) {
         myVCard.orgUnits = @[self.departmentLabel.text];
     }
-    
-    myVCard.title = self.telLabel.text;
+    //photo
+    myVCard.photo = UIImageJPEGRepresentation(self.avatarImgView.image, 1.0);
+    myVCard.title = self.titleLabel.text;
     myVCard.note = self.telLabel.text;
     myVCard.mailer = self.emailLabel.text;
     
@@ -109,4 +115,26 @@
     [[WCXMPPTool sharedXMPPTool].vCard updateMyvCardTemp:myVCard];
 
 }
+#pragma mark - UIActionSheetDelegate
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    WCLog(@"%ld",buttonIndex);
+    if(buttonIndex == 2) return;
+    if(buttonIndex == 0){//相机
+    
+    }else{//照片库
+        UIImagePickerController *imagePC = [[UIImagePickerController alloc]init];
+        imagePC.allowsEditing = YES;
+        imagePC.delegate = self;
+        [self presentViewController:imagePC animated:YES completion:nil];
+    }
+}
+
+#pragma mark -UIImagePickerControllerDelegate
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+    UIImage *editedImg = info[UIImagePickerControllerEditedImage];
+    self.avatarImgView.image = editedImg;
+    [self editvCardController:nil finishedSave:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 @end
