@@ -18,8 +18,7 @@
  */
 @interface WCXMPPTool ()<XMPPStreamDelegate>{
     
-    XMPPStream *_xmppStream;
-    XMPPvCardAvatarModule *_avatar;//电子名片的头像模块
+    
     XMPPResultBlock _resultBlock;
 }
 -(void)setupXmppStream;
