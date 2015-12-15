@@ -27,6 +27,9 @@ typedef void(^XMPPResultBlock)(XMPPResultType);
 @property(strong,nonatomic,readonly)XMPPRoster *roster;//花名册
 @property (strong, nonatomic, readonly) XMPPvCardAvatarModule *avatar;//电子名片的头像模块
 @property(strong,nonatomic,readonly)XMPPRosterCoreDataStorage *rosterStorage;//花名册数据存储
+
+@property (strong, nonatomic,readonly) XMPPMessageArchiving *msgArchiving;
+@property (strong, nonatomic,readonly) XMPPMessageArchivingCoreDataStorage *msgArchingStorage;
 -(void)login:(XMPPResultBlock)block;
 -(void)registerToServer:(XMPPResultBlock)block;
 -(void)logout;

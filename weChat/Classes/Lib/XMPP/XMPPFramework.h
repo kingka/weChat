@@ -53,6 +53,10 @@
 // 电子名片模块 头文件
 #import "XMPPvCardTempModule.h"
 #import "XMPPvCardCoreDataStorage.h"
+
+//消息
+#import "XMPPMessageArchiving.h"
+#import "XMPPMessageArchivingCoreDataStorage.h"
 //
 //#import "XMPPPubSub.h"
 //

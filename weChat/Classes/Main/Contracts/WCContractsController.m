@@ -7,6 +7,7 @@
 //
 
 #import "WCContractsController.h"
+#import "WCChatController.h"
 
 @interface WCContractsController ()<NSFetchedResultsControllerDelegate>{
     
@@ -103,6 +104,22 @@
     }
     
 }
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    XMPPJID *friendJid = [_resultsController.fetchedObjects[indexPath.row] jid];
+    [self performSegueWithIdentifier:@"toChat" sender:friendJid];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    UIViewController *dest = segue.destinationViewController;
+    if([dest isKindOfClass:[WCChatController class]]){
+        
+        WCChatController *vc = (WCChatController*)dest;
+        vc.friendJid = sender;
+    }
+    
+}
 #pragma mark - tableDataSource
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
@@ -152,6 +169,8 @@
 
     return cell;
 }
+
+
 
 //#pragma mark - KVO delegate --load1
 //-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{

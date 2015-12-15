@@ -75,6 +75,7 @@ WCSingletonM(XMPPTool);
     [_avatar deactivate];
     [_vCard deactivate];
     [_roster deactivate];
+    [_msgArchiving deactivate];
     
     //断开连接
     [_xmppStream disconnect];
@@ -86,6 +87,8 @@ WCSingletonM(XMPPTool);
     _vCard = nil;
     _avatar = nil;
     _xmppStream = nil;
+    _msgArchiving = nil;
+    _msgArchingStorage = nil;
     
 }
 
@@ -98,10 +101,13 @@ WCSingletonM(XMPPTool);
     _avatar = [[XMPPvCardAvatarModule alloc]initWithvCardTempModule:_vCard];
     _rosterStorage = [XMPPRosterCoreDataStorage sharedInstance];
     _roster = [[XMPPRoster alloc]initWithRosterStorage:_rosterStorage];
+    _msgArchingStorage = [XMPPMessageArchivingCoreDataStorage sharedInstance];
+    _msgArchiving = [[XMPPMessageArchiving alloc]initWithMessageArchivingStorage:_msgArchingStorage];
     //*激活
     [_vCard activate:_xmppStream];
     [_avatar activate:_xmppStream];
     [_roster activate:_xmppStream];
+    [_msgArchiving activate:_xmppStream];
     // 设置代理
     [_xmppStream addDelegate:self delegateQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)];
 }

@@ -22,6 +22,7 @@
 		F913BF3B1C10168B007AD558 /* WCEditvCardController.m in Sources */ = {isa = PBXBuildFile; fileRef = F913BF3A1C10168B007AD558 /* WCEditvCardController.m */; };
 		F92B78321C152A81008C8E19 /* WCContractsController.m in Sources */ = {isa = PBXBuildFile; fileRef = F92B78311C152A81008C8E19 /* WCContractsController.m */; };
 		F92B78351C16ACE1008C8E19 /* WCAddContract.m in Sources */ = {isa = PBXBuildFile; fileRef = F92B78341C16ACE1008C8E19 /* WCAddContract.m */; };
+		F92B78381C1E63FB008C8E19 /* WCChatController.m in Sources */ = {isa = PBXBuildFile; fileRef = F92B78371C1E63FB008C8E19 /* WCChatController.m */; };
 		F92B83F01C030E1700A22278 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F92B83EF1C030E1700A22278 /* main.m */; };
 		F92B83F31C030E1700A22278 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F92B83F21C030E1700A22278 /* AppDelegate.m */; };
 		F92B83F91C030E1700A22278 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F92B83F71C030E1700A22278 /* Main.storyboard */; };
@@ -217,6 +218,8 @@
 		F92B78311C152A81008C8E19 /* WCContractsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCContractsController.m; sourceTree = "<group>"; };
 		F92B78331C16ACE1008C8E19 /* WCAddContract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCAddContract.h; sourceTree = "<group>"; };
 		F92B78341C16ACE1008C8E19 /* WCAddContract.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCAddContract.m; sourceTree = "<group>"; };
+		F92B78361C1E63FA008C8E19 /* WCChatController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCChatController.h; sourceTree = "<group>"; };
+		F92B78371C1E63FB008C8E19 /* WCChatController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCChatController.m; sourceTree = "<group>"; };
 		F92B83EB1C030E1700A22278 /* weChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F92B83EF1C030E1700A22278 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F92B83F11C030E1700A22278 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -594,6 +597,8 @@
 				F92B78311C152A81008C8E19 /* WCContractsController.m */,
 				F92B78331C16ACE1008C8E19 /* WCAddContract.h */,
 				F92B78341C16ACE1008C8E19 /* WCAddContract.m */,
+				F92B78361C1E63FA008C8E19 /* WCChatController.h */,
+				F92B78371C1E63FB008C8E19 /* WCChatController.m */,
 			);
 			path = Contracts;
 			sourceTree = "<group>";
@@ -1739,6 +1744,7 @@
 				F92B85951C030F3700A22278 /* XMPPIQ+LastActivity.m in Sources */,
 				F92B85D41C030F3700A22278 /* NSXMLElement+XEP_0203.m in Sources */,
 				F92B85A11C030F3700A22278 /* XMPPRoomMessageMemoryStorageObject.m in Sources */,
+				F92B78381C1E63FB008C8E19 /* WCChatController.m in Sources */,
 				F92B85D71C030F3700A22278 /* XMPPMessage+XEP_0224.m in Sources */,
 				F92B85721C030F3700A22278 /* XMPPDeprecatedDigestAuthentication.m in Sources */,
 				F92B85CB1C030F3700A22278 /* XMPPMessage+XEP_0172.m in Sources */,
