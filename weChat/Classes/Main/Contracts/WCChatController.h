@@ -13,4 +13,5 @@
 - (IBAction)send:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 @property (strong, nonatomic) XMPPJID *friendJid;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomConstrain;
 @end

@@ -8,7 +8,7 @@
 
 #import "WCChatController.h"
 
-@interface WCChatController ()<UITableViewDataSource,UITableViewDelegate,NSFetchedResultsControllerDelegate>
+@interface WCChatController ()<UITableViewDataSource,UITableViewDelegate,NSFetchedResultsControllerDelegate,UITextFieldDelegate>
 {
     NSFetchedResultsController *_resultController;
 }
@@ -18,7 +18,30 @@
 - (IBAction)send:(id)sender {
 }
 
+#pragma mark - notifer
+-(void)addNotifer{
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(kbShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(kbHide:) name:UIKeyboardWillHideNotification object:nil];
+}
+
+-(void)kbShow:(NSNotification*)noti{
+
+    // 获取键盘高度
+    NSLog(@"%@",noti.userInfo);
+    CGFloat kbHeight = [noti.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue].size.height;
+    
+    self.bottomConstrain.constant = kbHeight;
+}
+
+-(void)kbHide:(NSNotification*)noti{
+
+    self.bottomConstrain.constant = 0;
+}
+#pragma mark - lifeCycle
 -(void)viewDidLoad{
+    
+    [self addNotifer];
     
     self.title = self.friendJid.bare;
     //1 上下文
@@ -45,10 +68,17 @@
     [_resultController performFetch:&error];
     
 }
+
+-(void)dealloc{
+    
+}
 #pragma mark - NSFetchedResultsControllerDelegate
 -(void)controllerDidChangeContent:(NSFetchedResultsController *)controller{
     
     [self.tableView reloadData];
+    //滚动到底部
+    NSIndexPath *path = [NSIndexPath indexPathForRow:_resultController.fetchedObjects.count-1 inSection:0];
+    [self.tableView scrollToRowAtIndexPath:path atScrollPosition:UITableViewScrollPositionBottom animated:YES];
 }
 #pragma mark -UITableViewDataSource
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -66,4 +96,21 @@
     return cell;
 }
 #pragma mark -UITableViewDelegate
+-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+    [self.view endEditing:YES];
+}
+#pragma mark - UITextFieldDelegate
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    
+    //发送消息
+    XMPPMessage *msg = [XMPPMessage messageWithType:@"chat" to:self.friendJid];
+    [msg addBody:self.textField.text];
+    
+    [[WCXMPPTool sharedXMPPTool].xmppStream sendElement:msg];
+    
+    //清空
+    self.textField.text = nil;
+    
+    return YES;
+}
 @end

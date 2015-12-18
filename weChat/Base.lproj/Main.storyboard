@@ -94,7 +94,7 @@
         <!--聊天界面-->
         <scene sceneID="X5l-3r-Tki">
             <objects>
-                <viewController id="G4m-Ie-D3D" customClass="WCChatController" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="G4m-Ie-D3D" customClass="WCChatController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="d0W-UT-Wv5"/>
                         <viewControllerLayoutGuide type="bottom" id="zx0-4J-HhE"/>
@@ -106,14 +106,17 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hJy-Zb-ygb">
                                 <rect key="frame" x="0.0" y="551" width="600" height="49"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o5i-PO-mHJ">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o5i-PO-mHJ" userLabel="输入框">
                                         <rect key="frame" x="42" y="11" width="376" height="30"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="h7K-q3-MH0"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="send" enablesReturnKeyAutomatically="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="G4m-Ie-D3D" id="hZK-ZC-fiA"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TuO-Nv-n8A">
                                         <rect key="frame" x="508" y="11" width="46" height="30"/>
@@ -176,6 +179,7 @@
                     <navigationItem key="navigationItem" title="聊天界面" id="zSo-LG-8h2"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="bottomConstrain" destination="kd1-0E-tQG" id="9Ml-68-ayQ"/>
                         <outlet property="tableView" destination="l6k-A4-8hf" id="50b-Gl-vjr"/>
                         <outlet property="textField" destination="o5i-PO-mHJ" id="ayF-PP-lp4"/>
                     </connections>
